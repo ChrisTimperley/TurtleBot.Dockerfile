@@ -9,4 +9,6 @@ RUN apt-get update &&\
                         ros-indigo-kobuki\
                         ros-indigo-rocon-remocon\
                         ros-indigo-ar-track-alvar-msgs\
-                        ros-indigo-rocon-qt-library
+                        ros-indigo-rocon-qt-library &&\
+    apt-get clean &&\
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
