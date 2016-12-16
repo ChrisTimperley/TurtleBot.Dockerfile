@@ -1,0 +1,9 @@
+version: '2'
+services:
+  turtlebot:
+    build: .
+    command: /bin/bash
+    privileged: true
+    image: christimperley/turtlebot
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro

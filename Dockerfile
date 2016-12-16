@@ -40,4 +40,5 @@ VOLUME ["/sys/fs/cgroup"]
 
 # Add entrypoint
 ADD turtlebot_entrypoint.sh /turtlebot_entrypoint.sh
-ENTRYPOINT /turtlebot_entrypoint.sh
+ENTRYPOINT ["/turtlebot_entrypoint.sh"]
+CMD []
