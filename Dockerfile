@@ -37,3 +37,7 @@ RUN cd /lib/systemd/system/sysinit.target.wants/; ls | grep -v systemd-tmpfiles-
     rm -f /lib/systemd/system/systemd-update-utmp*
 ENV init /lib/systemd/systemd
 VOLUME ["/sys/fs/cgroup"]
+
+# Add entrypoint
+ADD turtlebot_entrypoint.sh /turtlebot_entrypoint.sh
+ENTRYPOINT /turtlebot_entrypoint.sh
