@@ -21,6 +21,7 @@ docker run --rm\
            -v /sys/fs/cgroup:/sys/fs/cgroup:ro\
            -v /dev/kobuki:/dev/kobuki\
            -v /dev/serial:/dev/serial\
+           -v /dev/bus/usb:/dev/bus/usb\
            -it\
            /christimperley/turtlebot\
            /bin/bash
