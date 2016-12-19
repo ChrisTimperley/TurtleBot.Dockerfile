@@ -8,7 +8,8 @@ RUN apt-get update && \
                         libnss-mdns \
                         netatalk \
                         systemd \
-                        ros-indigo-openni-launch && \
+                        ros-indigo-openni-launch \
+                        ros-indigo-image-view && \
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
