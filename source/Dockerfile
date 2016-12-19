@@ -47,3 +47,6 @@ RUN wstool init -j5 src /tmp/all.rosinstall && \
               cd ${catkin_ws} && catkin_make" &&\
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Use modified entrypoint
+ADD turtlebot_entrypoint.sh /turtlebot_entrypoint.sh
