@@ -31,6 +31,17 @@ RUN useradd -g sudo -s /bin/bash turtlebot && \
     mkdir -p /home/turtlebot && \
     chown -R turtlebot /home/turtlebot
 USER turtlebot
+WORKDIR /home/turtlebot
 
 # Get the ROS dependencies
 RUN sudo -u turtlebot bash -c "sudo rosdep init && rosdep update"
+
+# Create a catkin workspace for ROS
+RUN mkdir -p ros_catkin_ws
+ENV ros_catkin_ws /home/turtlebot/ros_catkin_ws
+WORKDIR ${ros_catkin_ws}
+
+# Install desktop variant of ROS
+RUN rosinstall_generator desktop_full --rosdistro indigo --deps --wet-only --tar \
+      > desktop.install
+RUN wstool init -j8 src desktop.install
