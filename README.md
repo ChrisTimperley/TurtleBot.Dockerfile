@@ -16,13 +16,13 @@ docker pull christimperley/turtlebot
 ## Usage
 
 ```
-docker run --rm\
-           --privileged\
-           -v /sys/fs/cgroup:/sys/fs/cgroup:ro\
-           -v /dev/kobuki:/dev/kobuki\
-           -v /dev/serial:/dev/serial\
-           -v /dev/bus/usb:/dev/bus/usb\
-           -it\
-           /christimperley/turtlebot\
+docker run --rm \
+           --privileged \
+           -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
+           -v /dev/kobuki:/dev/kobuki \
+           -v /dev/serial:/dev/serial \
+           -v /dev/bus/usb:/dev/bus/usb \
+           -it \
+           christimperley/turtlebot\
            /bin/bash
 ```
