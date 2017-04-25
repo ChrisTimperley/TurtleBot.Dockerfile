@@ -1,4 +1,5 @@
-FROM ros:indigo-robot
+#FROM ros:indigo-robot
+FROM ros:kinetic
 MAINTAINER Chris Timperley "christimperley@googlemail.com"
 
 # Fix inability to launch avahi-daemon correctly
@@ -8,8 +9,8 @@ RUN apt-get update && \
                         libnss-mdns \
                         netatalk \
                         systemd \
-                        ros-indigo-openni-launch \
-                        ros-indigo-image-view && \
+                        ros-kinetic-openni-launch \
+                        ros-kinetic-image-view && \
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
